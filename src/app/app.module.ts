@@ -11,9 +11,9 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
 
-//装饰器：声明了一个模块
+// 装饰器：声明了一个模块
 @NgModule({
-  //声名组件，指令，管道
+  // 声名组件，指令，管道
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -23,12 +23,12 @@ import { StarsComponent } from './stars/stars.component';
     ProductComponent,
     StarsComponent,
   ],
-  imports: [     //AppModule的依赖模块
-    BrowserModule,  //浏览器模块(必选)
-    FormsModule,    //表单模块
-    HttpModule      //http通信模块
+  imports: [     // AppModule的依赖模块
+    BrowserModule,  // 浏览器模块(必选)
+    FormsModule,    // 表单模块
+    HttpModule      // http通信模块
   ],
-  providers: [],    //用来声明模块中提供的服务
-  bootstrap: [AppComponent]  //bootstrap
+  providers: [],    // 用来声明模块中提供的服务
+  bootstrap: [AppComponent]  // bootstrap
 })
 export class AppModule { }

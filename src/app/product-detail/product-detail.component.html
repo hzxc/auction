@@ -1,4 +1,16 @@
-<div>
+<div class="thumbnail">
   <img src="http://placehold.it/820x230" alt="">
-  <h4>{{productTitle}}</h4>
+  <div>
+    <h4>{{prod.title}}</h4>
+    <h4>￥{{prod.price}}</h4>
+    <p>{{prod.desc}}</p>
+  </div>
+  <div>
+    <p class="pull-right">{{comments.length}}</p>
+    <p><app-stars [rating]="prod.rating"></app-stars></p>
+  </div>
+</div>
+
+<div class="well">
+  <div class="row"></div>
 </div>

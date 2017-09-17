@@ -13,11 +13,12 @@ import { StarsComponent } from './stars/stars.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ProductService } from './shared/product.service';
 
 
 const routeCofing: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'product/:prodTitle', component: ProductDetailComponent }
+  { path: 'product/:prodId', component: ProductDetailComponent }
 ]
 
 // 装饰器：声明了一个模块
@@ -44,7 +45,7 @@ const routeCofing: Routes = [
     HttpModule,
     RouterModule.forRoot(routeCofing),
   ],
-  providers: [],    // 用来声明模块中提供的服务
+  providers: [ProductService],    // 用来声明模块中提供的服务
   bootstrap: [AppComponent]  // bootstrap
 })
 export class AppModule { }

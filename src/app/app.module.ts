@@ -14,14 +14,15 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 
+
 const routeCofing: Routes = [
   { path: '', component: HomeComponent },
   { path: 'product/:prodTitle', component: ProductDetailComponent }
 ]
 
 // 装饰器：声明了一个模块
-@NgModule({
   // 声名组件，指令，管道
+@NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,

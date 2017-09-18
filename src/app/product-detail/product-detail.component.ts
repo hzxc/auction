@@ -8,16 +8,15 @@ import { Product, ProductService,Comment } from '../shared/product.service';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-
   // private productTitle: string;
   private prod:Product;
-  private comment:Array<Comment>;
+  private comments:Array<Comment>;
 
   constructor(private routeInfo: ActivatedRoute,private prodSrv:ProductService) { }
 
   ngOnInit() {
     let prodId:number=this.routeInfo.snapshot.params['prodId'];
     this.prod = this.prodSrv.getProduct(prodId);
-    this.comment =  this.prodSrv.getCommentsByProductId(prodId);
+    this.comments =  this.prodSrv.getCommentsByProductId(prodId);
   }
 }

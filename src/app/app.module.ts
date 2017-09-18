@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -14,6 +15,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductService } from './shared/product.service';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 const routeCofing: Routes = [
@@ -32,6 +34,7 @@ const routeCofing: Routes = [
     CarouselComponent,
     ProductDetailComponent,
     HomeComponent,
+    FilterPipe,
     ProductComponent,
     StarsComponent,
   ],
@@ -44,6 +47,7 @@ const routeCofing: Routes = [
     // http通信模块
     HttpModule,
     RouterModule.forRoot(routeCofing),
+    ReactiveFormsModule
   ],
   providers: [ProductService],    // 用来声明模块中提供的服务
   bootstrap: [AppComponent]  // bootstrap

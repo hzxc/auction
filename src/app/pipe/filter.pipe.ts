@@ -15,5 +15,4 @@ export class FilterPipe implements PipeTransform {
       return fieldValue.indexOf(keyword) >=0;
     });
   }
-
 }

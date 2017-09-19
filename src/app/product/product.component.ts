@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService, Product } from '../shared/product.service';
 import { FormControl } from '@angular/forms';
-import 'rxjs/Rx';
+import 'rxjs/Rx';//管道依赖js
 
 @Component({
   selector: 'app-product',

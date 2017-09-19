@@ -7,11 +7,25 @@
   </div>
   <div>
     <p class="pull-right">{{comments.length}}</p>
-    <app-stars [rating]="prod.rating"></app-stars>
+    <app-stars [rating]="prod.rating | number:'1.0-2'"></app-stars>
   </div>
 </div>
 
 <div class="well">
+  <div>
+    <!-- <button class="btn btn-success" (click)="isCommentHidden = !isCommentHidden">评论</button> -->
+    <button class="btn btn-success" (click)="hiddenEvent()">{{commentBtnText}}</button>
+  </div>
+  <div [hidden]="isCommentHidden">
+    <app-stars [(rating)]="newRating" [readonly]="false"></app-stars>
+    <div>
+      <textarea [(ngModel)] = "newComent">
+      </textarea>
+    </div>
+    <div>
+      <button class="btn btn-default" (click)="addComment($event)">submit</button>
+    </div>
+  </div>
   <div class="row" *ngFor="let comment of comments">
     <hr/>
     <div class="col-md-12">

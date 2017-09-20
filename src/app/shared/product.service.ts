@@ -14,16 +14,20 @@ export class ProductService {
     new Product(5, "第六个商品", 3.89, 5, "商品描述5", ["虚拟产品"]),
   ];
 
+  getAllCategories():string[]{
+    return ['食品','化妆品','办公用品','电子产品','虚拟产品'];
+  }
+
   getProducts(): Array<Product> {
     return this.products;
   }
 
   getProduct(id: number): Product {
-    return this.products.find((product:Product) => product.id == id);
+    return this.products.find((product: Product) => product.id == id);
   }
 
-  getCommentsByProductId(id:number):Array<Comment>{
-    return this.comments.filter((comment:Comment) =>comment.productId == id)
+  getCommentsByProductId(id: number): Array<Comment> {
+    return this.comments.filter((comment: Comment) => comment.productId == id)
   }
 
   private comments: Array<Comment> = [
@@ -63,6 +67,5 @@ export class Comment {
     public rating: number,
     public content: string,
   ) {
-
   }
 }
